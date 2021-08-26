@@ -38,6 +38,8 @@ body {
     height: 100%;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
+
+    left: 60%; /*temporario*/
 }
 
 .title {
@@ -110,13 +112,14 @@ body {
 
 .first-column {
     text-align: center;
-    flex: 1 0 auto; /** 1: flex-grow; 2: flex-shrink; 3: flex-basis (estudar esses métodos) **/
+    width: 40%;
     z-index: 10;
 }
 
 .second-column {
     flex: 2 0 auto;
     display: flex;
+    width: 60%;
     flex-direction: column;
     align-items: center;
 }
@@ -125,9 +128,19 @@ body {
     margin: 1em 0;
 }
 
+.link-social-media:not(:first-child){
+    margin-left: 10px;
+}
+
 .list-social-media {
     display: flex;
     list-style-type: none;
+}
+
+.link-social-media:hover .item-social-media {
+    background-color: #0066cc;
+    color: #fff;
+    border-color: #0066cc;
 }
 
 .item-social-media {
@@ -137,24 +150,13 @@ body {
     height: 35px;
     line-height: 35px;
     text-align: center;
-    color: #95a5a6
-}
-
-.link-social-media:not(:first-child){
-    margin-left: 10px;
-}
-
-.link-social-media:hover .item-social-media {
-    background-color: #0066cc;
-    color: #fff;
-    border-color: #0066cc;
+    color: #95a5a6;
 }
 
 .form {
     display: flex;
     flex-direction: column; /** Mantem os elementos do formulário um abaixo do outro **/
     width: 55%;
-    margin: 8px;
 }
 
 .form input {
@@ -176,8 +178,24 @@ body {
     padding: 0 5px;
 }
 
+/******************second-content*************************/
+
 .second-content {
     position: absolute;
-    display: none; /** Apenas esse conteúdo ficará visível **/
+    display: flex;
+}
 
+.second-content .first-column {
+    order: 2;
+}
+
+.second-content .second-column {
+    order: 1;
+}
+
+.password {
+    color: #34495e;
+    font-size: 14px;
+    margin: 15px 0;
+    text-align: center;
 }
