@@ -118,7 +118,6 @@ body {
 }
 
 .second-column {
-    flex: 2 0 auto;
     display: flex;
     width: 60%;
     flex-direction: column;
@@ -207,7 +206,6 @@ body {
     text-align: center;
 }
 
-.sign-in-js .first-content .first-column,
 .sign-in-js .first-content .second-column {
     z-index: -1;
 }
@@ -226,12 +224,12 @@ body {
     border-bottom-left-radius: 0;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    animation: slidein 3s;
+    animation: slidein 1.5s;
     z-index: 12;
 }
 
 .sign-up-js .content::before {
-    animation: slideout 3s;
+    animation: slideout 1.5s;
     z-index: 12;
 }
 
@@ -252,16 +250,16 @@ body {
 
 .sign-in-js .first-content .first-column {
     position: relative;
-    animation: deslocamentoDir 3s;
+    animation: deslocamentoEsq 1.5s;
 }
 
 .sign-up-js .second-content .second-column {
     position: relative;
     z-index: -1;
-    animation: descolamentoEsq 3s;
+    animation: descolamentoDir 1.5s;
 }
 
-@keyframes deslocamentoDir {
+@keyframes descolamentoEsq {
     from {
         left: 0;
         opacity: 1;
@@ -271,23 +269,21 @@ body {
     25% {
         left: -80px;
         opacity: .5;
-        z-index: 12;
     }
 
     50% {
         left: -100px;
         opacity: .2;
-        z-index: 12;
     }
 
     to {
         left: -110px;
         opacity: 0;
         z-index: -1;
-    }
+    } 
 }
 
-@keyframes descolamentoEsq {
+@keyframes deslocamentoDir {
     from {
         left: 0;
         z-index: 12;
@@ -295,20 +291,20 @@ body {
 
     25% {
         left: 80px;
-        opacity: .5;
+        z-index: 12;
     }
 
     50% {
         left: 100px;
-        opacity: .2;
+        z-index: 12;
     }
 
     to {
         left: 110px;
-        opacity: 0;
         z-index: -1;
-    } 
+    }
 }
+
 /***Animação***/
 
 @keyframes slidein {
