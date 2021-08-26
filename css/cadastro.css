@@ -38,8 +38,6 @@ body {
     height: 100%;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
-
-    left: 60%; /*temporario*/
 }
 
 .title {
@@ -87,6 +85,7 @@ body {
 .btn-primary {
     background-color: transparent;
     border: 1px solid #fff;
+    transition: background-color .5s;
 }
 
 .btn-primary:hover {
@@ -97,6 +96,7 @@ body {
 .btn-second {
     background-color: #0066cc;
     border: 1px solid #0066cc;
+    transition: background-color .5s;
 }
 
 .btn-second:hover {
@@ -107,7 +107,10 @@ body {
 
 .first-content {
     display: flex;
-    position: relative;
+}
+
+.first-content .second-column {
+    z-index: 11;
 }
 
 .first-column {
@@ -125,22 +128,26 @@ body {
 }
 
 .social-media {
-    margin: 1em 0;
+    margin: 1rem 0;
 }
 
 .link-social-media:not(:first-child){
     margin-left: 10px;
 }
 
-.list-social-media {
-    display: flex;
-    list-style-type: none;
+.link-social-media .item-social-media {
+    transition: background-color .5s;
 }
 
 .link-social-media:hover .item-social-media {
     background-color: #0066cc;
     color: #fff;
     border-color: #0066cc;
+}
+
+.list-social-media {
+    display: flex;
+    list-style-type: none;
 }
 
 .item-social-media {
@@ -187,10 +194,12 @@ body {
 
 .second-content .first-column {
     order: 2;
+    z-index: -1;
 }
 
 .second-content .second-column {
     order: 1;
+    z-index: -1;
 }
 
 .password {
@@ -198,4 +207,162 @@ body {
     font-size: 14px;
     margin: 15px 0;
     text-align: center;
+}
+
+.sign-in-js .first-content .first-column,
+.sign-in-js .first-content .second-column {
+    z-index: -1;
+}
+
+.sign-in-js .second-content .second-column {
+    z-index: 11;
+}
+
+.sign-in-js .second-content .first-column {
+    z-index: 13;
+}
+
+.sign-in-js .content::before {
+    left: 60%;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    animation: slidein 3s;
+    z-index: 12;
+}
+
+.sign-up-js .content::before {
+    animation: slideout 3s;
+    z-index: 12;
+}
+
+.sign-up-js .second-content .first-column,
+.sign-up-js .second-content .second-column {
+    z-index: -1;
+}
+
+.sign-up-js .first-content .second-column {
+    z-index: 11;
+}
+
+.sign-up-js .first-content .first-column {
+    z-index: 13;
+}
+
+/***Conteúdo sendo arrastado para trás***/
+
+.sign-in-js .first-content .first-column {
+    position: relative;
+    animation: deslocamentoDir 3s;
+}
+
+.sign-up-js .second-content .second-column {
+    position: relative;
+    z-index: -1;
+    animation: descolamentoEsq 3s;
+}
+
+@keyframes deslocamentoDir {
+    from {
+        left: 0;
+        opacity: 1;
+        z-index: 12;
+    }
+
+    25% {
+        left: -80px;
+        opacity: .5;
+        z-index: 12;
+    }
+
+    50% {
+        left: -100px;
+        opacity: .2;
+        z-index: 12;
+    }
+
+    to {
+        left: -110px;
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+@keyframes descolamentoEsq {
+    from {
+        left: 0;
+        z-index: 12;
+    }
+
+    25% {
+        left: 80px;
+        opacity: .5;
+    }
+
+    50% {
+        left: 100px;
+        opacity: .2;
+    }
+
+    to {
+        left: 110px;
+        opacity: 0;
+        z-index: -1;
+    } 
+}
+/***Animação***/
+
+@keyframes slidein {
+    from {
+        left: 0;
+        width: 40%;
+    }
+
+    25% {
+        left: 5%;
+        width: 50%;
+    }
+
+    50% {
+        left: 25%;
+        width: 60%;
+    }
+
+    75% {
+        left: 45%;
+        width: 50%;
+    }
+
+    to {
+        left: 60%;
+        width: 40%;
+    }
+}
+
+@keyframes slideout {
+    from {
+        left: 60%;
+        width: 40%;
+    }
+
+    25% {
+        left: 45%;
+        width: 50%;
+    }
+
+    50% {
+        left: 25%;
+        width: 60%;
+    }
+
+    75% {
+        left: 5%;
+        width: 50%;
+    }
+
+    to {
+        left: 0;
+        width: 40%;
+    }
 }
