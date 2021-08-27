@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
 
 * {
     margin: 0; /** Reseta a configuração de margem **/
@@ -7,7 +7,7 @@
 }
 
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .container {
@@ -71,7 +71,7 @@ body {
     text-transform: uppercase;
     color: #fff;
     font-size: 10px;
-    padding: 10px 50px;
+    padding: 10px 10px;
     cursor: pointer;
     font-weight: bold;
     width: 150px;
@@ -224,12 +224,12 @@ body {
     border-bottom-left-radius: 0;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    animation: slidein 1.5s;
+    animation: slidein 1s;
     z-index: 12;
 }
 
 .sign-up-js .content::before {
-    animation: slideout 1.5s;
+    animation: slideout 1s;
     z-index: 12;
 }
 
@@ -249,14 +249,15 @@ body {
 /***Conteúdo sendo arrastado para trás***/
 
 .sign-in-js .first-content .first-column {
+    z-index: -1;
     position: relative;
-    animation: deslocamentoEsq 1.5s;
+    animation: deslocamentoEsq 1s;
 }
 
 .sign-up-js .second-content .second-column {
     position: relative;
     z-index: -1;
-    animation: descolamentoDir 1.5s;
+    animation: descolamentoDir 1s;
 }
 
 @keyframes descolamentoEsq {
@@ -291,12 +292,10 @@ body {
 
     25% {
         left: 80px;
-        z-index: 12;
     }
 
     50% {
         left: 100px;
-        z-index: 12;
     }
 
     to {
