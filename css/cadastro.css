@@ -229,12 +229,12 @@ textarea:focus, input:focus, select:focus {
     border-bottom-left-radius: 0;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    animation: slidein .5s;
+    animation: slidein .3s;
     z-index: 12;
 }
 
 .sign-up-js .content::before {
-    animation: slideout .5s;
+    animation: slideout .3s;
     z-index: 12;
 }
 
@@ -246,6 +246,7 @@ textarea:focus, input:focus, select:focus {
 .sign-up-js .first-content .second-column {
     z-index: 11;
 }
+
 
 .sign-up-js .first-content .first-column {
     z-index: 13;
@@ -275,11 +276,13 @@ textarea:focus, input:focus, select:focus {
     25% {
         left: -80px;
         opacity: .5;
+        z-index: 12;
     }
 
     50% {
         left: -100px;
         opacity: .2;
+        z-index: 12;
     }
 
     to {
