@@ -367,3 +367,11 @@ textarea:focus, input:focus, select:focus {
         width: 40%;
     }
 }
+
+/***Responsividade***/
+
+@media screen and (max-width: 1040px) {
+    .content {
+        width: 100%;
+    }
+}
