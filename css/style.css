@@ -229,12 +229,12 @@ textarea:focus, input:focus, select:focus {
     border-bottom-left-radius: 0;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    animation: slidein .3s;
+    animation: slidein .1s;
     z-index: 12;
 }
 
 .sign-up-js .content::before {
-    animation: slideout .3s;
+    animation: slideout .1s;
     z-index: 12;
 }
 
