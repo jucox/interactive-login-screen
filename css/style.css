@@ -229,12 +229,12 @@ textarea:focus, input:focus, select:focus {
     border-bottom-left-radius: 0;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    animation: slidein .1s;
+    animation: slidein .5s;
     z-index: 12;
 }
 
 .sign-up-js .content::before {
-    animation: slideout .1s;
+    animation: slideout .5s;
     z-index: 12;
 }
 
@@ -378,5 +378,15 @@ textarea:focus, input:focus, select:focus {
 
     .content::before {
         width: 100%;
+        height: 40%;
+        top: 0;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+
+    .first-content {
+        flex-direction: column;
+        justify-content: space-around;
     }
 }
